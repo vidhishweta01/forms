@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new()
+    @user = User.new
   end
 
   def create
@@ -29,8 +29,9 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   private
+
   def whitelisted_user_params
     params.require(:user).permit(:username, :email, :password)
   end
